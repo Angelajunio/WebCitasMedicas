@@ -20,27 +20,27 @@ import org.springframework.transaction.annotation.Transactional;
 public class PacienteService {
     @PersistenceContext
     private EntityManager em;
-    @Transactional(rollbackFor={javax.xml.rpc.ServiceException.class})
-    public void create(Paciente paciente) throws javax.xml.rpc.ServiceException{
+    @Transactional(rollbackFor={ServiceException.class})
+    public void create(Paciente paciente) throws ServiceException{
         em.persist(paciente);
     }
     
-     @Transactional(rollbackFor={javax.xml.rpc.ServiceException.class})
-    public Paciente retrieve(int id) throws javax.xml.rpc.ServiceException{
+     @Transactional(rollbackFor={ServiceException.class})
+    public Paciente retrieve(int id) throws ServiceException{
         return em.find(Paciente.class,id);
     }
-    @Transactional(rollbackFor = {javax.xml.rpc.ServiceException.class})
-    public void update(Paciente paciente) throws javax.xml.rpc.ServiceException{
+    @Transactional(rollbackFor = {ServiceException.class})
+    public void update(Paciente paciente) throws ServiceException{
         em.persist(paciente);
     }
-     @Transactional(rollbackFor = {javax.xml.rpc.ServiceException.class})
-     public void delete(int id) throws javax.xml.rpc.ServiceException{
+     @Transactional(rollbackFor = {ServiceException.class})
+     public void delete(int id) throws ServiceException{
          em.remove(this.retrieve(id));
      }
     
     //.............................
-      @Transactional(rollbackFor = {javax.xml.rpc.ServiceException.class})
-     public List<Paciente> list() throws javax.xml.rpc.ServiceException{
+      @Transactional(rollbackFor = {ServiceException.class})
+     public List<Paciente> list() throws ServiceException{
         return em.createNamedQuery("Paciente.findAll").getResultList();
     }
 }

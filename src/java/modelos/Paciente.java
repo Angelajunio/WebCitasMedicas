@@ -6,6 +6,8 @@
 package modelos;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -21,6 +23,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -75,7 +78,21 @@ public class Paciente implements Serializable {
     private String observaciones;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pacienteid")
     private List<Cita> citaList;
+ @Transient //No transaccion con la base de datos
+    private String strFecha;
 
+    public String getStrFecha() {
+        return strFecha;
+    }
+
+    public void setStrFecha(String strFecha) {
+        this.strFecha = strFecha;
+    }
+
+    public String getFechaMostrar() {
+        DateFormat df = new SimpleDateFormat("dd/MMM/yyyy");
+        return df.format(fechanacimiento);
+    }
     public Paciente() {
     }
 
@@ -190,3 +207,10 @@ public class Paciente implements Serializable {
     }
     
 }
+
+
+
+
+
+
+
