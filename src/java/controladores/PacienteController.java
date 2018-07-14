@@ -49,7 +49,7 @@ public class PacienteController {
             List<Paciente> pacientes = service.list();
             model.addAttribute("pacientes", pacientes);
             return "paciente/list";
-        } catch (ServiceException ex) {
+        } catch (Exception ex) {
             model.addAttribute("message", ex.getMessage());
             return "error";
         }

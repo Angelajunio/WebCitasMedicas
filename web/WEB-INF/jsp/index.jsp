@@ -18,7 +18,13 @@
         </div>
         
         <div>
-            <a href="${pageContext.request.contextPath}/terapia/list.htm">Listado de terapia</a>
+            <a href="${pageContext.request.contextPath}/especialidad/list.htm">Listado de especialidad</a>
+        </div>
+        <div>
+            <a href="${pageContext.request.contextPath}/horario/list.htm">Listado de horario</a>
+        </div>
+        <div>
+            <a href="${pageContext.request.contextPath}/cita/list.htm">Listado de citas</a>
         </div>
     </body>
 </html>

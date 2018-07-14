@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,7 +39,10 @@
                             ${p.getCedula()}
                         </td>
                         <td>
-                            ${p.getNombre()}
+                            ${p.getNombres()}
+                        </td>
+                        <td>
+                            ${p.getApellidos()}
                         </td>
                         <td>
                             ${p.getFechaMostrar()}
@@ -56,9 +60,9 @@
                             ${p.getObservaciones()}
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/paciente/retrieve/${p.getPacienteId()}.htm">Ver</a> |
-                            <a href="${pageContext.request.contextPath}/paciente/update/${p.getPacienteId()}.htm">Editar</a> |
-                            <a href="${pageContext.request.contextPath}/paciente/delete/${p.getPacienteId()}.htm">Eliminar</a>
+                            <a href="${pageContext.request.contextPath}/paciente/retrieve/${p.getPacienteid()}.htm">Ver</a> |
+                            <a href="${pageContext.request.contextPath}/paciente/update/${p.getPacienteid()}.htm">Editar</a> |
+                            <a href="${pageContext.request.contextPath}/paciente/delete/${p.getPacienteid()}.htm">Eliminar</a>
                         </td>
                     </tr>
                 </c:forEach>

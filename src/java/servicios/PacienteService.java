@@ -31,7 +31,7 @@ public class PacienteService {
     }
     @Transactional(rollbackFor = {ServiceException.class})
     public void update(Paciente paciente) throws ServiceException{
-        em.persist(paciente);
+        em.merge(paciente);
     }
      @Transactional(rollbackFor = {ServiceException.class})
      public void delete(int id) throws ServiceException{
