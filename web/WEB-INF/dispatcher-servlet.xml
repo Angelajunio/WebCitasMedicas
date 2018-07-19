@@ -17,6 +17,7 @@
     
     <mvc:annotation-driven/>
     <tx:annotation-driven/>
+    <mvc:resources mapping="/container/**" location="/container/"/>
     <context:component-scan base-package="controladores"/>
     <context:component-scan base-package="modelos"/>
     <context:component-scan base-package="servicios"/>

@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,7 @@
     <body>
          <h1>Listado de Pacientes</h1>
         <hr>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>C&eacute;dula</th>

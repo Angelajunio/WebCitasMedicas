@@ -6,6 +6,7 @@
 package modelos;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,6 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -71,7 +73,43 @@ public class Cita implements Serializable {
     @JoinColumn(name = "pacienteid", referencedColumnName = "pacienteid")
     @ManyToOne(optional = false)
     private Paciente pacienteid;
+    @Transient
+    private String strFecha;
 
+    public String getStrFecha() {
+        return strFecha;
+    }
+
+    public void setStrFecha(String strFecha) {
+        this.strFecha = strFecha;
+    }
+    public String getFechaDesc() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy");
+        return sdf.format(fecha);
+    }
+    @Transient
+    private int idpaciente;
+
+    public int getIdpaciente() {
+        return idpaciente;
+    }
+
+    public void setIdpaciente(int idpaciente) {
+        this.idpaciente = idpaciente;
+    }
+    @Transient
+    private int idmedico;
+
+    public int getIdmedico() {
+        return idmedico;
+    }
+
+    public void setIdmedico(int idmedico) {
+        this.idmedico = idmedico;
+    }
+    
+    
+    
     public Cita() {
     }
 

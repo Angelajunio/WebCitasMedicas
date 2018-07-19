@@ -5,23 +5,24 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Medicos</title>
+        <title>Medico</title>
     </head>
     <body>
-        <h1>Listado de M&eacute;dicos</h1>
+        <h1>Listado de medico</h1>
         <hr>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
-                    <th>C&eacute;dula</th>
-                    <th>Nombre</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
                     <th>Correo</th>
-                    <th>C&oacute;digo</th>
+                     <th>Especialidad</th>
+                     <th>Horario</th>                   
                     <th>
                         <a href="${pageContext.request.contextPath}/medico/create.htm">Crear</a>
                     </th>
@@ -32,16 +33,19 @@
                 <c:forEach items="${requestScope.medicos}" var="m">
                     <tr>
                         <td>
-                            ${m.getCedula()}
+                            ${m.getNombres()}
                         </td>
                         <td>
-                            ${m.getNombres()}
+                            ${m.getApellidos()}
                         </td>
                         <td>
                             ${m.getCorreo()}
                         </td>
                         <td>
-                            ${m.getCodigo()}
+                            ${m.getEspecialidadid().getNombre()}
+                        </td>
+                        <td>
+                            ${m.getHorarioid().getHorainicial()}
                         </td>
                         <td>
                             <a href="${pageContext.request.contextPath}/medico/retrieve/${m.getMedicoid()}.htm">Ver</a> |

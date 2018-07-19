@@ -20,10 +20,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+
 
 /**
  *
@@ -66,6 +68,27 @@ public class Medico implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "medicoid")
     private List<Cita> citaList;
 
+     @Transient
+     private int idespecialidad;
+
+    public int getIdespecialidad() {
+        return idespecialidad;
+    }
+
+    public void setIdespecialidad(int idespecialidad) {
+        this.idespecialidad = idespecialidad;
+    }
+     
+    @Transient
+     private int idhorario;
+
+    public int getIdhorario() {
+        return idhorario;
+    }
+
+    public void setIdhorario(int idhorario) {
+        this.idhorario = idhorario;
+    }
     public Medico() {
     }
 

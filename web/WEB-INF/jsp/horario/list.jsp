@@ -1,47 +1,51 @@
 <%-- 
     Document   : list
-    Created on : 13-jul-2018, 14:38:50
+    Created on : 14-jul-2018, 13:31:25
     Author     : User
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Especialidad</title>
+         <title>Horario</title>
     </head>
     <body>
-        <h1>Listado de Especialidad</h1>
+        <h1>Listado de horario</h1>
         <hr>
         <table border="1">
             <thead>
                 <tr>
-                    <th>Nombre:</th>
-                    <th>Descripcion:</th>
-                        
+                    <th>Dias</th>
+                    <th>Hora Inicial</th>
+                    <th>Hora Final</th>
+                   
                     <th>
-                        <a href="${pageContext.request.contextPath}/especialidad/create.htm">Crear</a>
+                        <a href="${pageContext.request.contextPath}/horario/create.htm">Crear</a>
                     </th>
                     <!--Completar resto de datos-->
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${requestScope.especialidades}" var="m">
+                <c:forEach items="${requestScope.horarios}" var="m">
                     <tr>
                         <td>
-                            ${m.getNombre()}
+                            ${m.getDias()}
                         </td>
                         <td>
-                            ${m.getDescripcion()}
+                            ${m.getHorainicial()}
                         </td>
-  
+                        <td>
+                            ${m.getHorafinal()}
+                        </td>
                         
                         <td>
-                            <a href="${pageContext.request.contextPath}/especialidad/retrieve/${m.getEspecialidadid()}.htm">Ver</a> |
-                            <a href="${pageContext.request.contextPath}/especialidad/update/${m.getEspecialidadid()}.htm">Editar</a> |
-                            <a href="${pageContext.request.contextPath}/especialidad/delete/${m.getEspecialidadid()}.htm">Eliminar</a>
+                            <a href="${pageContext.request.contextPath}/horario/retrieve/${m.getHorarioid()}.htm">Ver</a> |
+                            <a href="${pageContext.request.contextPath}/horario/update/${m.getHorarioid()}.htm">Editar</a> |
+                            <a href="${pageContext.request.contextPath}/horario/delete/${m.getHorarioid()}.htm">Eliminar</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -50,6 +54,5 @@
         <button type="reset">
             <a href="${pageContext.request.contextPath}/index.htm" style="text-decoration: none; color: black">Atr&aacute;s</a>
         </button>
-    </body>       
-
+    </body>
 </html>

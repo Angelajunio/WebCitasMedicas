@@ -31,7 +31,7 @@ public class HorarioService {
     }
     @Transactional(rollbackFor = {ServiceException.class})
     public void update(Horario horario) throws ServiceException{
-        em.persist(horario);
+        em.merge(horario);
     }
      @Transactional(rollbackFor = {ServiceException.class})
      public void delete(int id) throws ServiceException{
