@@ -17,22 +17,22 @@
         <hr/>
             <fieldset>
                 <label>Apellidos:</label>
-                <span> ${m.getApellidos()}</span>
+                <span> ${medico.getApellidos()}</span>
                 <br>
                 <label>Correo:</label>
-                <span> ${m.getCorreo()}</span>
+                <span> ${medico.getCorreo()}</span>
                 <br>
                 <label>Especialidad:</label>
-                <span>${m.getEspecialidadId().getNombre()}</span>
+                <span>${medico.getEspecialidadid().getNombre()}</span>
                 <br>
                 <label>Horario:</label>
-                <span>${m.getHorarioId().getHorainicial()}</span>
+                <span>${medico.getHorarioid().getHorainicial()}</span>
                 <br>
                 
             </fieldset>
     <frm:form action="${pageContext.request.contextPath}/medico/delete.htm" 
         method="POST" commandName="medico"> 
-        <frm:hidden path="medicoId"/>
+        <frm:hidden path="medicoid"/>
         <div>
             <a href="${pageContext.request.contextPath}/medico/list.htm">Cancelar</a>
                     <button type="submit">Eliminar</button>

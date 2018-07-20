@@ -10,12 +10,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="<c:url value="/container/css/bootstrap.min.css"/>" rel="stylesheet">
         <title>Medico</title>
     </head>
     <body>
+         <div class="jumbotron">
+            <div class="container">
         <h1>Listado de medico</h1>
+         </div>
+        </div>
         <hr>
-        <table border="1">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Nombres</th>
@@ -59,5 +64,7 @@
         <button type="reset">
             <a href="${pageContext.request.contextPath}/index.htm" style="text-decoration: none; color: black">Atr&aacute;s</a>
         </button>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>
 </html>

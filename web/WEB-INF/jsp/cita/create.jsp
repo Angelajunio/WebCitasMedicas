@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="frm" uri="http://www.springframework.org/tags/form" %>
+    <%@taglib prefix="frm" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,16 +24,16 @@
                 <frm:select path="idpaciente"> <%--Terapia--%>
                     <frm:option value="0" label="--Seleccione--"/>
                     <frm:options items="${listPaciente}"
-                                 itemLabel="nombre"
-                                 itemValue="pacienteId"/> <%--Paciente--%>
+                                 itemLabel="nombres"
+                                 itemValue="pacienteid"/> <%--Paciente--%>
                 </frm:select>
                 <br>
                 <label>M&eacute;dico: </label>
                 <frm:select path="idmedico"> <%--Terapia--%>
                     <frm:option value="0" label="--Seleccione--"/>
                     <frm:options items="${listMedico}"
-                                 itemLabel="nombre"
-                                 itemValue="medicoId"/> <%--Paciente--%>
+                                 itemLabel="nombres"
+                                 itemValue="medicoid"/> <%--Paciente--%>
                 </frm:select>
                 <br>
                  <label>Hora: </label>

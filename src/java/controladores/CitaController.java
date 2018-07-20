@@ -52,15 +52,7 @@ public class CitaController {
         }
     }
 
-    @ModelAttribute("listMedico")
-    public List<Medico> ListMedico() throws ServiceException {
-        return srvMedico.list();
-    }
-
-    @ModelAttribute("listPaciente")
-    public List<Paciente> ListPaciente() throws ServiceException {
-        return srvPaciente.list();
-    }
+    
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(Model model) {
@@ -97,6 +89,18 @@ public class CitaController {
 
         } catch (ParseException | ServiceException ex) {
             model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
+    @RequestMapping(value= "/retrieve/{id}", method=RequestMethod.GET)
+    public String retrieve(Model model, @PathVariable String id){
+        try{
+            int pk = Integer.parseInt(id);
+            Cita cita = srvCita.retrieve(pk);
+            model.addAttribute("cita", cita);
+            return "cita/retrieve";  
+        }catch(ServiceException ex){
+         model.addAttribute("message", ex.getMessage());
             return "error";
         }
     }
@@ -140,5 +144,39 @@ public class CitaController {
             model.addAttribute("message", ex.getMessage());
             return "error";
         }
+    }
+     @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+    public String delete(Model model, @PathVariable String id){
+        try{
+            int pk = Integer.parseInt(id);
+            Cita cita=srvCita.retrieve(pk);
+            model.addAttribute("cita",cita);
+            return "cita/delete";  
+        }catch(Exception ex){
+         model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
+    
+    @RequestMapping(value="/delete", method=RequestMethod.POST)
+    public String delete(Model model, @ModelAttribute("cita") Cita cita){
+        try{
+            srvCita.delete(cita.getCitaid());
+            return "redirect: list.htm";   
+        }catch(Exception ex){
+         model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
+     
+    
+    @ModelAttribute("listMedico")
+    public List<Medico> ListMedico() throws ServiceException {
+        return srvMedico.list();
+    }
+
+    @ModelAttribute("listPaciente")
+    public List<Paciente> ListPaciente() throws ServiceException {
+        return srvPaciente.list();
     }
 }

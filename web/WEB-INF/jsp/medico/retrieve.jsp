@@ -19,16 +19,16 @@
         <fieldset>
         
             <label>Apellidos:</label>
-                <span> ${m.getApellidos()}</span>
+                <span> ${medico.getApellidos()}</span>
                 <br>
                 <label>Correo:</label>
-                <span> ${m.getCorreo()}</span>
+                <span> ${medico.getCorreo()}</span>
                 <br>
                 <label>Especialidad:</label>
-                <span>${m.getEspecialidadid().getNombre()}</span>
+                <span>${medico.getEspecialidadid().getNombre()}</span>
                 <br>
                 <label>Horario:</label>
-                <span>${m.getHorarioid().getHorainicial()}</span>
+                <span>${medico.getHorarioid().getHorainicial()}</span>
                 <br>
          
         </fieldset>

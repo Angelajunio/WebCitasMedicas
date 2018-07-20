@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="frm" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,11 +23,20 @@
                     <label>Paciente: </label>
                     <span>${cita.getPacienteId().getNombre()}</span>
                 <br>
-                <label>Observaci&oacute;n: </label>
-                <frm:textarea path="observacion"></frm:textarea>
+                <label>Hora: </label>
+                <frm:input path="hora" 
+                           value="${cita.getHora()}"
+                           placeholder="Ingrese la hora "></frm:input>
                     <br>
-                    <label>Duraci&oacute;n</label>
-                <frm:input path="duracion" type="number" min="5"></frm:input>
+                    <label>Dia:</label>
+                <frm:input path="dia" 
+                           value="${cita.getDia()}"
+                           placeholder="Ingrese el dia"></frm:input>
+                <br>
+                <label>Observacion</label>
+                 <frm:input path="observaciones" 
+                           value="${cita.getObservacion()}"
+                           placeholder="Ingrese una Observacion"></frm:input>
                 <br>
                 <label>Realizada</label>
                 <frm:checkbox path="realizada"></frm:checkbox>
@@ -35,8 +45,12 @@
                 <frm:hidden path="strFecha"></frm:hidden>
                 <frm:hidden path="idmedico"></frm:hidden>
                 <frm:hidden path="idpaciente"></frm:hidden>
+                <frm:hidden path="observacion"></frm:hidden>
+                <frm:hidden path="hora"></frm:hidden>
+                 <frm:hidden path="dia"></frm:hidden>
+                <frm:hidden path="realizada"></frm:hidden>
                 <button type="reset">
-                    <a href="${pageContext.request.contextPath}/terapia/list.htm" style="text-decoration: none; color: black"/>Cancelar</a>
+                    <a href="${pageContext.request.contextPath}/cita/list.htm" style="text-decoration: none; color: black"/>Cancelar</a>
                 </button>
                 <button type="submit">Guardar</button>
             </div>

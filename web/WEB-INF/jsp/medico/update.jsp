@@ -18,16 +18,16 @@
         <frm:form action="${pageContext.request.contextPath}/medico/update.htm" method="POST" commandName="medico">
             <fieldset>
                 <label>Apellidos:</label>
-                <span> ${m.getApellidos()}</span>
+                <span> ${medico.getApellidos()}</span>
                 <br>
                 <label>Correo:</label>
-                <span> ${m.getCorreo()}</span>
+                <span> ${medico.getCorreo()}</span>
                 <br>
                     <label>Especialidad:</label>
-                <span>${m.getEspecialidadId().getNombre()}</span>
+                <span>${medico.getEspecialidadId().getNombre()}</span>
                 <br>
                 <label>Horario:</label>
-                <span>${m.getHorarioId().getHorainicial()}</span>
+                <span>${medico.getHorarioId().getHorainicial()}</span>
                 <br>
                 
                 

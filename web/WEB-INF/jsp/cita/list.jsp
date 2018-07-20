@@ -10,12 +10,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="<c:url value="/container/css/bootstrap.min.css"/>" rel="stylesheet">
        <title>Citas</title>
     </head>
     <body>
+        <div class="jumbotron">
+            <div class="container">
         <h1>Listado de Citas</h1>
+        </div>
+        </div>
         <hr>
-        <table>
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Fecha</th>
@@ -31,32 +36,33 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${requestScope.citas}" var="t">
+                <c:forEach items="${requestScope.citas}" var="cita">
                     <tr>
                         <td>
-                            ${t.getFechaDesc()}
+                            ${cita.getFechaDesc()}
                         </td>
                         <td>
-                            ${t.getPacienteId().getNombre()}
+                            ${cita.getPacienteid().getNombres()}
                         </td>
                         <td>
-                            ${t.getMedicoId().getNombre()}
+                            ${cita.getMedicoid().getNombres()}
                         </td>
                         <td>
-                            ${t.getHora()} 
+                            ${cita.getHora()} 
                         </td>
                         <td>
-                            ${t.getDia()} 
+                            ${cita.getDia()} 
                         </td>
                         <td>
-                            ${t.getObservacion()}
+                            ${cita.getObservacion()}
                         </td>
                          <td>
-                            ${t.getRealizada()}
+                            ${cita.getRealizada()}
                         </td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/cita/retrieve/${p.getCitaid()}.htm">Ver</a> |
-                            <a href="${pageContext.request.contextPath}/cita/delete/${p.getCitaid()}.htm">Eliminar</a>
+                            <a href="${pageContext.request.contextPath}/cita/retrieve/${cita.getCitaid()}.htm">Ver</a> 
+                            <a href="${pageContext.request.contextPath}/cita/update/${cita.getPacienteid()}.htm">Editar</a> 
+                            <a href="${pageContext.request.contextPath}/cita/delete/${cita.getCitaid()}.htm">Eliminar</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -65,6 +71,8 @@
         <button type="reset">
             <a href="${pageContext.request.contextPath}/index.htm" style="text-decoration: none; color: black">Atr&aacute;s</a>
         </button>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+            <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>
 
 </html>
