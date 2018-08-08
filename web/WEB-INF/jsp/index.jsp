@@ -35,6 +35,20 @@
         <div>
             <a href="${pageContext.request.contextPath}/cita/list.htm">Listado de citas</a>
         </div>
+        
+ <br>
+        <div>
+            <a href="${pageContext.request.contextPath}/cita/reportturno.htm">Reporte cita medico y fecha</a>
+        </div>
+        
+            <div>
+            <a href="${pageContext.request.contextPath}/cita/reportconespecialidad.htm">Reporte cita  y especialidad</a>
+            </div>
+            <div>
+            <a href="${pageContext.request.contextPath}/cita/reportcitaespe.htm">Reporte cita especialidad</a>
+            </div>
+        
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
         <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>

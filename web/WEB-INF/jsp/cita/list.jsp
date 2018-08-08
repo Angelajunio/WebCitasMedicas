@@ -75,7 +75,8 @@
             <br>
         
             <a href="${pageContext.request.contextPath}/cita/reportturno.htm">Reporte cita medico y fecha</a>
-          <a href="${pageContext.request.contextPath}/cita/reportconespecialidad.htm">Reporte cita  y especialidad</a>
+            <br>
+            <a href="${pageContext.request.contextPath}/cita/reportconespecialidad.htm">Reporte cita  y especialidad</a>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
             <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>

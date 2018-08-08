@@ -7,21 +7,21 @@
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Especialidad.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/EspecialidadService.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/reportcitaespe.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/MedicoService.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/create.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Cita.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/report1.jrxml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/reportespecialidad.jrxml</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/validator/MedicoValidator.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/reportespecialidad.jrxml</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/especialidad/delete.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/horario/delete.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/paciente/update.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/horario/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/paciente/list.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/report2.jrxml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/paciente/create.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/validator/HorarioValidator.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/paciente/create.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/list.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/PacienteService.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/validator/EspecialidadValidator.java</file>
@@ -32,6 +32,7 @@
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/paciente/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/especialidad/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/CitaService.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/reporteconespecialidad.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/controladores/EspecialidadController.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/delete.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/reportturno.jsp</file>
@@ -47,6 +48,7 @@
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/especialidad/list.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/delete.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/reporteespecialidad.jrxml</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/list.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/validator/PacienteValidator.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/controladores/CitaController.java</file>

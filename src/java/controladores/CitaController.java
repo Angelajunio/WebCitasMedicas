@@ -123,6 +123,28 @@ public class CitaController {
             return "error";
         }
     }
+     @RequestMapping(value = "/reporteconespecialidad", method = RequestMethod.GET)
+    public String reporteconespecialidad(Model model) {
+        try {
+            //List<Paciente> pacientes = service.list();
+            //model.addAttribute("pacientes", pacientes);
+            return "cita/reporteconespecialidad";
+        } catch (Exception ex) {
+            model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
+     @RequestMapping(value = "/reportcitaespe", method = RequestMethod.GET)
+    public String reportcitaespe(Model model) {
+        try {
+            //List<Paciente> pacientes = service.list();
+            //model.addAttribute("pacientes", pacientes);
+            return "cita/reportcitaespe";
+        } catch (Exception ex) {
+            model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
 
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
