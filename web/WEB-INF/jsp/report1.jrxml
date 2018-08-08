@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fa4670b-a551-4f74-8e40-4a8e4d2a886a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cita."citaid" AS cita_citaid,
+     cita."fecha" AS cita_fecha,
+     cita."pacienteid" AS cita_pacienteid,
+     cita."medicoid" AS cita_medicoid,
+     cita."hora" AS cita_hora,
+     cita."dia" AS cita_dia,
+     cita."observacion" AS cita_observacion,
+     cita."realizada" AS cita_realizada,
+     medico."medicoid" AS medico_medicoid,
+     medico."nombres" AS medico_nombres,
+     medico."apellidos" AS medico_apellidos,
+     medico."correo" AS medico_correo,
+     medico."especialidadid" AS medico_especialidadid,
+     medico."horarioid" AS medico_horarioid
+FROM
+     "public"."medico" medico INNER JOIN "public"."cita" cita ON medico."medicoid" = cita."medicoid"]]>
+	</queryString>
+	<field name="cita_citaid" class="java.lang.Integer"/>
+	<field name="cita_fecha" class="java.sql.Date"/>
+	<field name="cita_medicoid" class="java.lang.Integer"/>
+	<field name="medico_nombres" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="90" backcolor="#000000" uuid="34a05c58-2bfe-4c06-9c1f-1a946944d0b8"/>
+				<staticText>
+					<reportElement style="Title" x="81" y="0" width="370" height="66" uuid="49d7413f-da05-467d-bfbb-ba592025b9cc"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reporte Reserva]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="138" height="18" forecolor="#000000" uuid="829d7dfe-f3f2-485a-b6aa-fb3f7ac97be5"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID Cita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="7" width="138" height="18" forecolor="#000000" uuid="8cd38608-905a-4afe-91d2-002d43970ee2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="7" width="138" height="18" forecolor="#000000" uuid="5afe5b47-89dd-4d16-a99d-e2f10dfb5d6c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID_Medico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="7" width="138" height="18" forecolor="#000000" uuid="a7d550bc-9151-42ba-a8b1-7c5d48d37458"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre del Medico]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="cef3b452-c5c7-4d0d-8cf7-98218f030670"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="138" height="18" uuid="cc2b7441-f7d7-4105-a1fd-0100b4e160c7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cita_citaid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="138" y="0" width="138" height="18" uuid="a79c7067-d027-4e09-99f5-a28425977ee4"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cita_fecha}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="276" y="0" width="138" height="18" uuid="a0ee2960-ae71-40a4-b428-bf1f3ab7abbc"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cita_medicoid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="414" y="0" width="138" height="18" uuid="cd58d827-a9b4-47ac-9345-cf58d0be1693"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{medico_nombres}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="65be6cec-8479-4839-9445-11e5eb878772"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="054a61ec-45cd-4bc1-b5ee-640dc45f79c0"/>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

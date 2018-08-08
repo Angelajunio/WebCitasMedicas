@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/horario/create.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/PacienteService.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Especialidad.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Horario.java</file>
@@ -11,10 +12,13 @@
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/create.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/especialidad/retrieve.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/CitaService.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/EspecialidadService.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/controladores/EspecialidadController.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/MedicoService.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/delete.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/cita/create.jsp</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/medico/update.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/web/WEB-INF/jsp/reportturno.jrxml</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Cita.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/modelos/Medico.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/WebCitasMedicas/WebCitasMedicas/src/java/servicios/HorarioService.java</file>

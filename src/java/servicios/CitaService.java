@@ -31,7 +31,7 @@ public class CitaService {
     }
     @Transactional(rollbackFor = {ServiceException.class})
     public void update(Cita cita) throws ServiceException{
-        em.persist(cita);
+        em.merge(cita);
     }
      @Transactional(rollbackFor = {ServiceException.class})
      public void delete(int id) throws ServiceException{

@@ -104,6 +104,18 @@ public class CitaController {
             return "error";
         }
     }
+    @RequestMapping(value = "/reportturno", method = RequestMethod.GET)
+    public String reportturno(Model model) {
+        try {
+            //List<Paciente> pacientes = service.list();
+            //model.addAttribute("pacientes", pacientes);
+            return "cita/reportturno";
+        } catch (Exception ex) {
+            model.addAttribute("message", ex.getMessage());
+            return "error";
+        }
+    }
+
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String update(Model model, @PathVariable int id) {

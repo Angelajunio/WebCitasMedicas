@@ -21,6 +21,7 @@
     <context:component-scan base-package="controladores"/>
     <context:component-scan base-package="modelos"/>
     <context:component-scan base-package="servicios"/>
+    <bean class="validator.PacienteValidator"/>
     
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 

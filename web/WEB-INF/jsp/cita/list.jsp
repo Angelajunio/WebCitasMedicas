@@ -70,7 +70,12 @@
         </table>
         <button type="reset">
             <a href="${pageContext.request.contextPath}/index.htm" style="text-decoration: none; color: black">Atr&aacute;s</a>
+              
         </button>
+            <br>
+        
+            <a href="${pageContext.request.contextPath}/cita/reportturno.htm">Reporte</a>
+          
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
             <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>

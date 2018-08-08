@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2aa079a9-ce2c-47fe-ab93-8b2d5e25bcb7">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cita."citaid" AS cita_citaid,
+     cita."fecha" AS cita_fecha,
+     cita."pacienteid" AS cita_pacienteid,
+     cita."medicoid" AS cita_medicoid,
+     cita."hora" AS cita_hora,
+     cita."dia" AS cita_dia,
+     cita."observacion" AS cita_observacion,
+     cita."realizada" AS cita_realizada,
+     especialidad."especialidadid" AS especialidad_especialidadid,
+     especialidad."nombre" AS especialidad_nombre,
+     especialidad."descripcion" AS especialidad_descripcion,
+     medico."medicoid" AS medico_medicoid,
+     medico."nombres" AS medico_nombres,
+     medico."apellidos" AS medico_apellidos,
+     medico."correo" AS medico_correo,
+     medico."especialidadid" AS medico_especialidadid,
+     medico."horarioid" AS medico_horarioid
+FROM
+     "public"."especialidad" especialidad INNER JOIN "public"."medico" medico ON especialidad."especialidadid" = medico."especialidadid"
+     INNER JOIN "public"."cita" cita ON medico."medicoid" = cita."medicoid"]]>
+	</queryString>
+	<field name="cita_citaid" class="java.lang.Integer"/>
+	<field name="medico_nombres" class="java.lang.String"/>
+	<field name="medico_especialidadid" class="java.lang.Integer"/>
+	<field name="especialidad_nombre" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="0ddb5bb6-9202-4e5e-ac77-66303fbb537d"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="37fb0cfe-b2d8-482f-b076-cbacde964de2"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="6a3a6be6-ad6c-40d4-8eb3-4b6f6e044bc9"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="81b1a18b-c35a-4731-92c5-ecfef54d9d97"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="03741bf5-de9d-49df-a8e5-696088ba07c5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cita_citaid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="138" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="bf959917-0c70-4034-8b3b-f491da491c3c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[medico_nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8b29c73b-2f10-4257-b0d2-1b9bc9c259d7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[medico_especialidadid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dd69a44f-e8eb-41d4-9693-0ea78f89ef75"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[especialidad_nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7541954e-4df8-420d-ab0c-4b9c79983c53"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="138" height="20" uuid="6c9007e5-c539-422a-b685-ab5bc75659a7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cita_citaid}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="138" y="0" width="138" height="20" uuid="b002ea69-7487-4776-baf3-5991bc7b32c6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medico_nombres}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="138" height="20" uuid="45f3526c-6400-4b07-978a-3212e57d876c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medico_especialidadid}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="414" y="0" width="138" height="20" uuid="cc94e90e-fa10-48b2-a117-beae3c3919be"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{especialidad_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="5643583e-27cf-4040-8056-502c8c20c93e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f98ab123-b6c7-40f7-a530-7a32927b94a7"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="bc0f482a-9d5f-4945-8111-c336366d1877"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
