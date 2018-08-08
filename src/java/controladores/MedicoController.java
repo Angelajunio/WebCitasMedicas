@@ -13,6 +13,7 @@ import modelos.Medico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,8 @@ import servicios.EspecialidadService;
 import servicios.HorarioService;
 import servicios.MedicoService;
 import servicios.ServiceException;
+import validator.MedicoValidator;
+import validator.PacienteValidator;
 
 
 
@@ -40,6 +43,8 @@ public class MedicoController {
  private EspecialidadService srvEspecialidad;
     @Autowired//Inyeccion de dependencias
  private HorarioService srvHorario;
+    @Autowired
+    private MedicoValidator validator;
     
 @RequestMapping(value="/list", method=RequestMethod.GET)
 public String list(Model model){ //los metodos en Spring web mvc retoornan un String
@@ -85,7 +90,8 @@ public String update(Model model, @PathVariable int id){ //los metodos en Spring
 }
 
 @RequestMapping(value="/create", method=RequestMethod.POST)
-public String create(Model model, @ModelAttribute("medico") Medico medico) throws ParseException{ //los metodos en Spring web mvc retoornan un String
+public String create(Model model, @ModelAttribute("medico") Medico medico, 
+        BindingResult errors) { //los metodos en Spring web mvc retoornan un String
     try{
        
        Especialidad especialidad = srvEspecialidad.retrieve(medico.getIdespecialidad());
@@ -93,11 +99,15 @@ public String create(Model model, @ModelAttribute("medico") Medico medico) throw
        medico.setEspecialidadid(especialidad);
        medico.setHorarioid(horario);
     
-       
-       srvMedico.create(medico);
+       validator.validate(medico, errors);
+            if(errors.hasErrors()){
+            model.addAttribute("medico", medico);
+            return"medico/create";
+            }else{
+                    srvMedico.create(medico);
        
         return "redirect:list.htm"; //nombre de la vista 
-    }
+    }}
     catch(ServiceException ex){
         model.addAttribute("message", ex.getMessage());
         return "error";

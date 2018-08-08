@@ -17,13 +17,19 @@
         <frm:form action="${pageContext.request.contextPath}/medico/create.htm" method="POST" commandName="medico">
             <fieldset>
                 <label>Nombre: </label>
-                <frm:input path="nombres" placeholder="Ingrese el nombre"></frm:input>
+                <frm:input path="nombres" />
+                <small id="nombresHelp" class="form-text text-muted">Ingrese el nombre  medico</small><br>
+                <frm:errors path="nombres" /> 
                     <br>
                     <label>Apellidos: </label>
-                <frm:input path="apellidos" placeholder="Ingrese el apellido"></frm:input>
+                <frm:input path="apellidos" />
+                <small id="apellidosHelp" class="form-text text-muted">Ingrese el apellido medico</small><br>    
+                <frm:errors path="apellidos" /> 
                 <br>
                 <label>Correo: </label>
-                <frm:input path="correo" placeholder="Ingrese el correo"></frm:input>
+                <frm:input path="correo" />
+                <small id="correoHelp" class="form-text text-muted">Ingrese el correo</small><br>    
+               <frm:errors path="correo" /> 
                 <br>
                     <label>Especialidad: </label>
                 <frm:select path="idespecialidad"> <%--Terapia--%>

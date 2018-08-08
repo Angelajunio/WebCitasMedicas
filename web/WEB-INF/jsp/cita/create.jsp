@@ -19,6 +19,7 @@
             <fieldset>
                 <label>Fecha: </label>
                 <frm:input type="date" path="strFecha"></frm:input>
+                <frm:errors path="strFecha" />  
                     <br>
                     <label>Paciente: </label>
                 <frm:select path="idpaciente"> <%--Terapia--%>
@@ -37,13 +38,19 @@
                 </frm:select>
                 <br>
                  <label>Hora: </label>
-                <frm:input path="hora" placeholder="Ingrese la hora"></frm:input>
-                    <br>
+                 <frm:input path="hora" />
+                 <small id="horaHelp" class="form-text text-muted">Ingrese la hora</small><br> 
+                <frm:errors path="hora" />     
+                <br>
                    <label>Dia: </label>
-                <frm:input path="dia" placeholder="Ingrese el dia"></frm:input>
+                   <frm:input path="dia" />
+                   <small id="diaHelp" class="form-text text-muted">Ingrese el dia</small><br> 
+                   <frm:errors path="dia" />   
                 <br>
                 <label>Observacion: </label>
-                <frm:input path="observacion" placeholder="Ingrese una observacion"></frm:input>
+                <frm:input path="observacion" />
+                <small id="observacionHelp" class="form-text text-muted">Ingrese una Observacion</small><br>  
+               <frm:errors path="observacion" /> 
                     <br>
                     <label>Realizada: </label>
                 <frm:input path="realizada" placeholder="Ingrese si se realizo o no"></frm:input>

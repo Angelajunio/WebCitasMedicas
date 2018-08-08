@@ -18,14 +18,21 @@
         <frm:form action="${pageContext.request.contextPath}/horario/create.htm" method="POST" commandName="horario">
             <fieldset>
                     <label>Dias: </label>
-                <frm:input path="dias" placeholder="Ingrese el dia"></frm:input>
+                    <frm:input path="dias" />
+                  <small id="diasHelp" class="form-text text-muted">Ingrese el dia</small><br>
+                   <frm:errors path="dias" /> 
                 <br>
                 <label>Hora Inicial: </label>
-                <frm:input path="horainicial" placeholder="Ingrese la hora"></frm:input>
-                    <br>
+                <frm:input path="horainicial"/>
+                <small id="horainicialHelp" class="form-text text-muted">Ingrese la hora inicial</small><br>
+                <frm:errors path="horainicial" /> 
+                
+                <br>
 
                 <label>Hora Final: </label>
-                <frm:input path="horafinal" placeholder="Ingrese l hora"></frm:input>
+                <frm:input path="horafinal" />
+               <small id="horafinalHelp" class="form-text text-muted">Ingrese la hora final</small><br>
+                <frm:errors path="horafinal" /> 
                     <br>
                 <div>
                         

@@ -44,10 +44,12 @@
                 <frm:input path="estatura"  min="100" max="230"></frm:input>
                 <small id="estaturaHelp" class="form-text text-muted">Ingrese la estatura del paciente</small><br>   
                 <frm:errors path="estatura" /> 
+                <br>
                     <label>Peso: </label>
                 <frm:input path="peso" min="30" max="330"></frm:input>
                   <small id="pesoHelp" class="form-text text-muted">Ingrese el peso del paciente</small><br>   
                    <frm:errors path="peso" /> 
+                   <br>
                 <label>Telefono: </label>
                 <frm:input path="telefono"   max="10"></frm:input>
                 <small id="telefonoHelp" class="form-text text-muted">Ingrese # telefono</small><br>    

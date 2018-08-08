@@ -10,12 +10,14 @@ import modelos.Horario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import servicios.HorarioService;
 import servicios.ServiceException;
+import validator.HorarioValidator;
 
 /**
  *
@@ -26,7 +28,8 @@ import servicios.ServiceException;
 public class HorarioController {
     @Autowired //Inyección de dependencias
     private HorarioService service;
-    
+      @Autowired
+    private HorarioValidator validator;
     @RequestMapping(value="/create", method= RequestMethod.GET)
     public String create(Model model){ //Los metodos en Spring Web MVC retornan un String
         try{
@@ -96,11 +99,17 @@ public class HorarioController {
     }
     
     @RequestMapping(value="/create", method= RequestMethod.POST)
-    public String create(Model model, @ModelAttribute("horario") Horario horario){
+    public String create(Model model, @ModelAttribute("horario") Horario horario, BindingResult errors){
         try{
+            validator.validate(horario, errors);
+            if(errors.hasErrors()){
+            model.addAttribute("horario", horario);
+            return"horario/create";
+            }else{
+            
             service.create(horario);
             return "redirect:list.htm";
-        }
+        }}
         catch(ServiceException ex){
             model.addAttribute("message", ex.getMessage());
             return "error";

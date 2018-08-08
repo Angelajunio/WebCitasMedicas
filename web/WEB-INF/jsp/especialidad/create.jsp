@@ -18,11 +18,16 @@
         <frm:form action="${pageContext.request.contextPath}/especialidad/create.htm" method="POST" commandName="especialidad">
             <fieldset>
                     <label>Nombre: </label>
-                <frm:input path="nombre" placeholder="Ingrese el nombre la especialidad"></frm:input>
+                    <frm:input path="nombre" />
+                 <small id="nombresHelp" class="form-text text-muted">Ingrese el nombre la especialidad</small><br>
+                
+                 <frm:errors path="nombre" /> 
                 <br>
                 <label>Descripcion: </label>
-                <frm:input path="descripcion" placeholder="Ingrese una descripcion"></frm:input>
-                    <br>
+                <frm:input path="descripcion" />
+                <small id="descripcionHelp" class="form-text text-muted">Ingrese una descripcion</small><br>
+                <frm:errors path="descripcion" /> 
+                <br>
                 <div>
                         
                             <a href="${pageContext.request.contextPath}/especialidad/list.htm" style="text-decoration: none; color: black"/>Cancelar</a>

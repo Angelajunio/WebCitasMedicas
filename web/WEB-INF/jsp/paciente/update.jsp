@@ -5,16 +5,23 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="frm" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="<c:url value="/container/css/bootstrap.min.css"/>" rel="stylesheet">
        <title>Editar Paciente</title>
     </head>
     <body>
+        <div class="jumbotron">
+            <div class="container">
         <h1>Editar Paciente</h1>
+        <hr/>
+            </div>
+        </div> 
         <hr>
         <frm:form action="${pageContext.request.contextPath}/paciente/update.htm" method="POST" commandName="paciente">
             <fieldset>
@@ -69,6 +76,8 @@
                 </div>
             </fieldset>
         </frm:form>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="<c:url value="/container/js/bootstrap.min.js"/>"></script>
     </body>
 
 </html>

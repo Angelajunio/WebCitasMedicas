@@ -22,7 +22,10 @@
     <context:component-scan base-package="modelos"/>
     <context:component-scan base-package="servicios"/>
     <bean class="validator.PacienteValidator"/>
-    
+     <bean class="validator.EspecialidadValidator"/>
+     <bean class="validator.HorarioValidator"/>
+     <bean class="validator.CitaValidator"/>
+     <bean class="validator.MedicoValidator"/>
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
     <!--

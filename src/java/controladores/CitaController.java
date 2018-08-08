@@ -15,6 +15,7 @@ import modelos.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import servicios.CitaService;
 import servicios.MedicoService;
 import servicios.PacienteService;
 import servicios.ServiceException;
+import validator.CitaValidator;
 
 /**
  *
@@ -39,7 +41,8 @@ public class CitaController {
 
     @Autowired
     private CitaService srvCita;
-
+ @Autowired
+    private CitaValidator validator;
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
         try {
@@ -67,12 +70,9 @@ public class CitaController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String create(Model model, @ModelAttribute("cita") Cita cita) {
+    public String create(Model model, @ModelAttribute("cita") Cita cita, BindingResult errors) {
         try {
-            Calendar fecha = Calendar.getInstance();
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            fecha.setTime(format.parse(cita.getStrFecha()));
-            cita.setFecha(fecha.getTime());
+           
 
             Paciente paciente = srvPaciente.retrieve(cita.getIdpaciente());
             Medico medico = srvMedico.retrieve(cita.getIdmedico());
@@ -81,12 +81,20 @@ public class CitaController {
             cita.setMedicoid(medico);
 
           
-            cita.setObservacion("-");
+            cita.setObservacion(" ");
             cita.setRealizada(false);
-
+        validator.validate(cita, errors);
+            if(errors.hasErrors()){
+            model.addAttribute("cita", cita);
+            return"cita/create";
+            }else{
+            Calendar fecha = Calendar.getInstance();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            fecha.setTime(format.parse(cita.getStrFecha()));
+            cita.setFecha(fecha.getTime());
             srvCita.create(cita);
             return "redirect:list.htm";
-
+            }
         } catch (ParseException | ServiceException ex) {
             model.addAttribute("message", ex.getMessage());
             return "error";

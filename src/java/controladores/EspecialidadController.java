@@ -10,12 +10,14 @@ import modelos.Especialidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import servicios.EspecialidadService;
 import servicios.ServiceException;
+import validator.EspecialidadValidator;
 
 /**
  *
@@ -26,6 +28,8 @@ import servicios.ServiceException;
 public class EspecialidadController {
     @Autowired //Inyección de dependencias
     private EspecialidadService service;
+      @Autowired
+    private EspecialidadValidator validator;
     
     @RequestMapping(value="/create", method= RequestMethod.GET)
     public String create(Model model){ //Los metodos en Spring Web MVC retornan un String
@@ -96,12 +100,18 @@ public class EspecialidadController {
     }
     
     @RequestMapping(value="/create", method= RequestMethod.POST)
-    public String create(Model model, @ModelAttribute("especialidad") Especialidad especialidad){
+    public String create(Model model, @ModelAttribute("especialidad") Especialidad especialidad,
+            BindingResult errors){
         try{
+            validator.validate(especialidad, errors);
+            if(errors.hasErrors()){
+            model.addAttribute("especialidad", especialidad);
+            return"especialidad/create";
+            }else{
             service.create(especialidad);
             return "redirect:list.htm";
         }
-        catch(ServiceException ex){
+        }catch(ServiceException ex){
             model.addAttribute("message", ex.getMessage());
             return "error";
         }
